@@ -1,0 +1,56 @@
+{
+    "name": "first_blood",
+    "deps": [
+        "gcc",
+        "g++",
+        "python2.7",
+        "python3.6",
+        "valgrind"
+    ],
+    "tasks": [
+        {
+            "name": "ninel",
+            "points": 20,
+            "tests": 14,
+            "points_distribution": {
+                "0": 1,
+                "1": 1,
+                "2": 1,
+                "3": 1,
+                "12": 2,
+                "13": 4
+            },
+            "timeout": 2,
+            "memory": 5242880,
+            "stdin": true,
+            "stdout": true
+        },
+        {
+            "name": "vectsecv",
+            "points": 20,
+            "tests": 20,
+            "timeout": 2,
+            "stdin": true,
+            "stdout": true
+        },
+        {
+            "name": "codeinvim",
+            "points": 30,
+            "tests": 20,
+            "timeout": 2,
+            "stdin": true,
+            "stdout": true
+        },
+        {
+            "name": "nomogram",
+            "points": 30,
+            "tests": 15,
+            "timeout": 2,
+            "stdin": true,
+            "stdout": true
+        }
+    ],
+    "coding_style": 20,
+    "penalty_warnings": 5,
+    "penalty_readme": 5
+}

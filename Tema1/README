@@ -1,0 +1,64 @@
+PROBLEMA #1 - NINEL
+  
+    Programul retine cate 3 copaci, verificand mereu daca cel de-al doilea este copac special
+  prin functia special care primeste inaltimile celor 3 copaci. Dupa fiecare verificare se
+  citeste inca un copac pana cand se citesc toti cei n copaci.
+
+    Suma este realizata adunand inaltimile copacilor speciali determinati cu functia special.
+  Daca nu au fost gasiti copaci speciali, variabila ok va ramane 0, fiind verificata ulterior
+  la calcularea mediei.
+
+    Media este calculata impartind suma la numarul de copaci speciali retinuti in variabila
+  contor. Daca nu au fost gasiti copaci speciali (ok == 1), contorul devine 1 pentru a se
+  putea efectua impartirea sum/contor care va fi 0.
+
+    Inaltimea maxima a unui copac de pe indice par este aflata comparand fiecare copac special
+  de pe indice par cu variabila max (care este initializata cu 0 pentru ca la prima comparatie
+  sa devine max = primul copac special). Dupa realizarea tutror comparatiilor max o sa retina
+  inaltimea maxima de pe indice par.
+
+    Similar se afla inaltimea ninima de indice impar. In acest caz, se foloseste variabila min
+  care este initializata cu 10^6 (valoarea maxima care poate fi introdusa ca inaltime de
+  copac).
+
+
+PROBLEMA #2 - VECTSECV
+  
+    In scopul rezolvarii s-au implementat 3 functii:
+
+  1. n_descrescator - returneaza numarul format din aceleasi cifre ca numarul introdus ca
+  parametru, doar ca cifrele vor fi in ordine descrescatoare. Toate cifrele numarului
+  initial sunt puse in vectorul cifre care este apoi sortat descrescator. Se iau elementele
+  pe rand formand numarul dorit.
+  2. n_crescator - funcioneaza foarte similar cu n_crescator, singura diferenta fiind ca
+  vectorul cifre este ordonat crescator pentru a returna numarul format din cifrele
+  numarului initial in ordine crescatoare.
+  3. diferenta - returneaza diferenta dintre n_descrescator si n_crescator.
+
+    Se realizeaza diferenta intre n_descrescator(n) si n_crescator(n), urmand ca n sa devina 
+  chiar acea diferenta. Diferentele se stocheaza in vectorul secventa cu ajutorul unui for 
+  pana cand se intalneste un numar care este deja in vector. In acest moment se iese din for 
+  si numarul elemntelor(in variabila contor) din secventa devine valoarea la care a ajuns 
+  cursorul i, iar elementul cu care incepe perioada este stocat in variabila elem_perioada, el 
+  fiind egal cu ultima diferenta calculata.
+    Parcurgand vectorul secventa pana la elementul cu care incepe perioada, se numara 
+  elementele care nu apar in perioada in variabila afara. Aceste elemente sunt eliminate apoi 
+  prin mutarea elementelor din perioada in capatul vectorului secventa, urmand sa fie afisate 
+  pe ecran, dupa valoarea stocata in variabila afara.
+
+PROBLEMA #3 - CODEINVIM
+
+  Se citesc valorile cerute si se pun in vectorul crestere puctele pe care studentul ar putea
+  sa le obtina daca ar fi luat 10 la fiecare materie (dintre cele la care nu a luat 10). Acest
+  vector se sorteaza descrescator si se adauga elementele pe rand la punctajul pe care
+  studentul il are. Daca suma depaseste punctajul minim, se iese din for si numarul minim de
+  materii la care ar trebui sa ia 10 va fi egal cu pozitia+1 a ultimului element din crestere
+  la care s-a ajuns.
+
+PROBLEMA #4 - NOMOGRAM
+  Prin intermediul unor functii se citesc restrictiile pentru linii, coloane si apoi puzzle-ul
+  rezolvat. Se verifica pentru fiecare linie/coloana daca grupurile de casute negre au marimea
+  egala cu restrictia data, si daca sunt exact atatea grupuri cate sunt date in restrictie. 
+  Daca una dintre aceste restrictii nu se respecta, programaul va afisa mesajul "Eroare". Daca
+  se testeaza toate si nu se gaseste vreo greseala, se va afisa "Corect".
+  

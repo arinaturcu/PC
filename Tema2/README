@@ -1,0 +1,59 @@
+Turcu Arina Emanuela 313CA
+
+TASK #1
+	Pentru calcularea sumei octetilor de pe marginea hartii s-a luat un pointer de tip char 
+(pentru ca pointeaza la o zona de un byte) cu care am parcurs prima si ultima linie 
+adunand valorile din bytes-ii gasiti. Apoi s-a luat primul byte din primul numar si 
+ultimul byte din ultimul numar de pe fiecare linie (exceptand prima si ultima linie pentru 
+care valorile au fost deja adaugate in suma). La ficare adunare un contor creste pentru a 
+determina nuamrul de bytes de pe conturul hartii. Functia task_1 de tip float returneaza 
+media aritmetica a acestora impartind suma la contor.
+
+	S-a luat separat cazul in care linia are un singur element, caz in care s-au adunat primul
+si ultimul byte.
+
+
+TASK #2
+	S-a implementat cate o functie pentru fiecare tip de modificare (modify, delete si swap) 
+ele fiind apoi apelate in functia task_2. Fiecare functie verifica daca tipul de date introdus
+este char (C), short (S) sau int (I), si in functie de el s-a declarat un pointer p de tipul 
+respectiv la linia hartii.
+
+	Modify se duce cu pointerul p la linia indicata de variabila line data la intrare, 
+verifica daca (indexul dat * dimensiunea tipului dat) incape in linia deja existenta si daca 
+nu incape realoca respectiva linie si o umple cu 0-uri. Dupa ce iese din structura de if, 
+inlocuieste valoare aflata la indexul dat cu variabila data la intrare (replace_value).
+Numarul de bytes pe care trebuie sa ii aiba linia dupa realocare este dat de functia new. In 
+cazul in care linia a fost realocata pointerul se duce la locatia primului element din linia 
+nou alocata.
+
+	Delete marge cu pointerul declarat char, short sau int in functie de caz la linia si 
+indexul date la intrare si inlocuieste variabila gasita la pozitia p + index cu 0.
+	Swap pune toate valorile din bytes-ii din gruparea data intr-un vector char. Acest vector 
+este apoi parcurs de la ultimul element spre primul si valorile de dau pe rand bytes-ilor din
+harta.
+
+	Functia task_2 verifica daca variabila oper este M, S sau D si apeleaza functiile modify, 
+swap si respectiv delete.
+
+
+TASK 3
+	Se declara un dublu pointer, copy, care arata spre inceputul hartii, adica map[0][0]. Se 
+parcurge cu el toata harta si se numara toate gaurile negre (valorile de 0 de pe fiecare 
+portiune de tip char). Se aloca dinamic vectorul supermass (si se ititializeaza cu 0 pe
+fiecare pozitie) care retine dimensiunea fiecarei retele de gauri negre si vectorii x_ax si 
+y_ax care retin pozitiile pe harta ale gaurilor negre de la care incep aceste retele de gauri 
+negre. Iniatial se aloca nr_black_holes * sizeof (int) bytes la fiecare pentru ca nu se stie 
+inca numarul de retele.
+
+	Se parcurge din nou harta si daca se gaseste o gaura neagra i se retine pozitia si se 
+apeleaza functia search. Functia search cauta alte valori de 0 in jurul pozitiei pe care este 
+(in sus, in jos, in stanga si in dreapa) verificandu-se daca pozitiile respective se gasesc pe
+harta si modifica valorea de 0 de pe pozitia pe care se afla, schimband-o in ceva diferit de 
+zero (0x99 aici dar putea fi orice). Daca se gaseste o gaura neagra in jur se apeleaza din nou
+funtia search pentru noua pozitie. Pana se epuizeaza o retea, valoarea din supermass respectiva
+retelei va creste la fiecare gasire de gaura neagra. Dupa fiecare apelare a functiei search 
+din task_2, k va creste, ajungand sa reprezinte numarul de retele de gauri negre. Se realoca 
+supermass, x_ax si y_ax in functie de numarul de retele gasite. Functia greatest afla reteaua
+cu supermasivitate maxima si returneaza pozitia ei in vectorul supermass. In functie de
+aceasta pozitie se afiseaza supermasivitatea si pozitia pe harta.

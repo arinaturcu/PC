@@ -1,0 +1,2 @@
+Inside rectangle: 6
+Inside circle: 5

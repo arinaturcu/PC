@@ -1,0 +1,3 @@
+-rw-r--r--  1 arina arina   15 2020-01-02 23:12:00.918069881 +0200 aldoilea
+-rw-r--r--  1 arina arina   32 2020-01-02 23:12:22.782299845 +0200 altrilea
+-rw-r--r--  1 arina arina   12 2020-01-02 23:11:28.961736324 +0200 primul.txt
